@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mcp-python-tools:
+    build: .
+    container_name: mcp-python-tools
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data  # 可选：挂载数据目录
+    environment:
+      - PYTHONUNBUFFERED=1
+    # 如果需要网络访问，可以添加端口映射
+    # ports:
+    #   - "8000:8000"
